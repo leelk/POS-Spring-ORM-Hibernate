@@ -3,6 +3,7 @@ package lk.ijse.dep.pos.dao;
 import lk.ijse.dep.pos.entity.SuperEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
@@ -10,6 +11,7 @@ import java.util.List;
 
 public abstract class CrudDAOImpl<T extends SuperEntity, ID extends Serializable> implements CrudDAO<T, ID>  {
 
+    @Autowired
     protected SessionFactory sessionFactory;
     private Class<T> entity;
 
